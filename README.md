@@ -9,7 +9,7 @@ This is the project for the Programming Foundations with Python which introduces
 - [Requirements](#requirements)
 - [Documentation](#documentation)
 - [Creators](#creators)
-- [Copyright and license](#copyright-and-license)
+- [Copyright & license](#copyright-and-license)
 
 ## Changelog:
 
@@ -20,8 +20,12 @@ This is the project for the Programming Foundations with Python which introduces
 ## Requirements:
 - Python 2.7
 
-## To run:
+## Documentation
+
+### To run:
 Download and unzip the project folder and run:
 `python entertainment_center_omdbapi.py`
 
 ## Creators
+
+## Copyright & License
