@@ -62,7 +62,7 @@ main_page_head = '''
             $("#trailer-video-container").empty();
         });
         // Start playing the video whenever the trailer modal is opened
-        $(document).on('click', '.movie-tile', function (event) {
+        $(document).on('click', '.view-trailer', function (event) {
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
             var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
@@ -76,6 +76,24 @@ main_page_head = '''
         $(document).ready(function () {
           $('.movie-tile').hide().first().show("fast", function showNext() {
             $(this).next("div").show("fast", showNext);
+          });
+        });
+        // Added jQuery to trigger modal for more movie information
+        $(document).ready(function () {
+          $('#movieInfo').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            
+            // Extract info from data-* attributes
+            var title = button.data('title') 
+            var storyline = button.data('storyline')
+            var year = button.data('year')
+            var rating = button.data('rating')
+            var duration = button.data('duration')
+
+            var modal = $(this)
+            modal.find('.modal-title').text(title + ' ('+year+')' )
+            // Add year, rating, duration, and storyline to modal body
+            modal.find('.modal-body').html('<p>Plot: ' +storyline+ '</p>' + '<p>Rating: ' +rating+ '</p>' + '<p>Duration: ' +duration+ '</p>' )
           });
         });
     </script>
@@ -100,6 +118,23 @@ main_page_content = '''
       </div>
     </div>
     
+    <!-- Movie Information Modal -->
+    <div class="modal fade" id="movieInfo" tabindex="-1" role="dialog" aria-labelledby="movieInfoLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="movieInfoLabel">Movie Title</h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Main Page Content -->
     <div class="container">
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -119,12 +154,16 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-    <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title}</h2>
-    <p>{movie_storyline}</p>
-    <p>{movie_length}</p>
+<div class="col-md-6 col-lg-4 movie-tile text-center" >
+    <img class="view-trailer" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer" src="{poster_image_url}" width="220" height="342">
+
+    <!-- Added a link to trigger the movie's information in a modal -->
+    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#movieInfo" data-title="{movie_title}" data-year="{movie_year}"
+    data-rating="{movie_rating}" data-duration="{movie_duration}" data-genre="{movie_genre}" data-storyline="{movie_storyline}">
+      More information
+    </button>
 </div>
+
 '''
 
 def create_movie_tiles_content(movies):
@@ -138,12 +177,14 @@ def create_movie_tiles_content(movies):
 
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
-            movie_title=movie.title,
-            #movie_length=str(movie.duration)+" minutes.",
-            movie_length=movie.duration,
-            poster_image_url=movie.poster_image_url,
-            movie_storyline=movie.storyline,
-            trailer_youtube_id=trailer_youtube_id
+            movie_title = movie.title,
+            movie_year = movie.year,
+            movie_rating = movie.rating,
+            movie_duration = movie.duration,
+            movie_genre = movie.genre,
+            poster_image_url = movie.poster_image_url,
+            movie_storyline = movie.storyline,
+            trailer_youtube_id = trailer_youtube_id,
         )
     return content
 
