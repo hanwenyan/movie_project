@@ -3,10 +3,11 @@ import os
 import re
 
 # Styles and scripting for the page
+# TODO: move all of the HTML to separate files and read using os
 main_page_head = '''
 <head>
     <meta charset="utf-8">
-    <title>Fresh Tomatoes!</title>
+    <title>Movie Trailer Project</title>
 
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -18,7 +19,7 @@ main_page_head = '''
             padding-top: 80px;
         }
         #trailer .modal-dialog {
-            margin-top: 200px;
+            margin-top: 20%;
             width: 640px;
             height: 480px;
         }
@@ -89,11 +90,16 @@ main_page_head = '''
             var year = button.data('year')
             var rating = button.data('rating')
             var duration = button.data('duration')
+            var genre = button.data('genre')
 
             var modal = $(this)
-            modal.find('.modal-title').text(title + ' ('+year+')' )
+            modal.find('.modal-title').text(title + ' ('+year+')' ) // Add the title and year of the movie
             // Add year, rating, duration, and storyline to modal body
-            modal.find('.modal-body').html('<p>Plot: ' +storyline+ '</p>' + '<p>Rating: ' +rating+ '</p>' + '<p>Duration: ' +duration+ '</p>' )
+            modal.find('.modal-body').html(
+              '<p><b>Plot:</b> ' +storyline+ '</p>' + 
+              '<p><b>Rating:</b> ' +rating+ '</p>' + 
+              '<p><b>Duration:</b> ' +duration+ '</p>' + 
+              '<p><b>Genres:</b> ' +genre+ '</p>' )
           });
         });
     </script>
@@ -124,12 +130,9 @@ main_page_content = '''
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="movieInfoLabel">Movie Title</h4>
+            <h3 class="modal-title" id="movieInfoLabel">Movie Title</h3>
           </div>
           <div class="modal-body">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -140,7 +143,7 @@ main_page_content = '''
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+            <a class="navbar-brand" href="#">Movie Trailers</a>
           </div>
         </div>
       </div>
@@ -148,16 +151,24 @@ main_page_content = '''
     <div class="container">
       {movie_tiles}
     </div>
+  
+  <footer class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+      <p class="navbar-text pull-right">Movie information from:
+        <a href="http://www.omdbapi.com/" target="_blank">The Open Movie Database</a>.
+      </p>
+    </div>
+  </footer>
+
   </body>
 </html>
 '''
 
-# A single movie entry html template
+# A single movie entry html template. Added a link which will trigger a modal popup for more information on the movie itself.
 movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" >
     <img class="view-trailer" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer" src="{poster_image_url}" width="220" height="342">
 
-    <!-- Added a link to trigger the movie's information in a modal -->
     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#movieInfo" data-title="{movie_title}" data-year="{movie_year}"
     data-rating="{movie_rating}" data-duration="{movie_duration}" data-genre="{movie_genre}" data-storyline="{movie_storyline}">
       More information
@@ -184,7 +195,7 @@ def create_movie_tiles_content(movies):
             movie_genre = movie.genre,
             poster_image_url = movie.poster_image_url,
             movie_storyline = movie.storyline,
-            trailer_youtube_id = trailer_youtube_id,
+            trailer_youtube_id = trailer_youtube_id
         )
     return content
 
