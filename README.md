@@ -9,7 +9,7 @@ This is the project for the Programming Foundations with Python which introduces
 - [Requirements](#requirements)
 - [Documentation](#documentation)
 - [Creators](#creators)
-- [Copyright & license](#copyright-and-license)
+- [Copyright & License](#copyright-and-license)
 
 ## Changelog:
 
