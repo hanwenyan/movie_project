@@ -168,10 +168,10 @@ main_page_content = '''
 movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" >
     <img class="view-trailer" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer" src="{poster_image_url}" width="220" height="342">
-
+    <br>
     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#movieInfo" data-title="{movie_title}" data-year="{movie_year}"
     data-rating="{movie_rating}" data-duration="{movie_duration}" data-genre="{movie_genre}" data-storyline="{movie_storyline}">
-      More information
+      {movie_title}
     </button>
 </div>
 
