@@ -1,7 +1,7 @@
 # movie_project
 Udacity Movie Project
 
-This is the project for the Programming Foundations with Python which introduces Object Oriented Programming for students. The goal here is create a simple website which displays movie trailers of the student's favorite movies as well as some of the movie information.
+This is the project for the Programming Foundations with Python which introduces Object Oriented Programming. The goal here is create a simple website which displays movie trailers of the student's favorite movies as well as some of the movie information.
 
 ## Table of contents
 
@@ -11,19 +11,34 @@ This is the project for the Programming Foundations with Python which introduces
 
 ## Changelog:
 
-### 6/1/15 - Initial commit. Changes from original fresh_tomatoes.py and media.py (replaced by omdbiapi.py) include: 
+### 6/2/15 - More updates:
+* Added more comments to code
+* Cleaned up some javascript
+* Added a footer to reference and link to OMDb where the movie information is retrieved
+
+### 6/1/15 - Changes from original fresh_tomatoes.py and media.py (replaced by omdbiapi.py) include: 
 * Data pulls from www.omdbapi.com so that I don't have to entire a bunch of information for each movie instance. It still requires a YT link.
 * Added jQuery / HTML for having a modal pop-up with movie information
-* 
 
 ## Documentation
 
 ### Requirements:
+
 - Python 2.7
 
+
 ### To run:
-Download and unzip the project folder and run:
-`python entertainment_center_omdbapi.py`
+
+1. Download and unzip the project folder. It should contain:
+
+* omdbapi.py
+* entertainment_center_omdbapi.py
+* fresh_tomatoes.py
+
+2. Run: `python entertainment_center_omdbapi.py` which will create fresh_tomatoes.html in your browser
+
+3. Additionally, a copy of fresh_tomatoes.html is included and can be directly opened in a browser.
 
 ## Creators
 Hanwen Yan
+Udacity
