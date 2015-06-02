@@ -41,5 +41,6 @@ This is the project for the Programming Foundations with Python which introduces
 3. Additionally, a copy of `fresh_tomatoes.html` is included and can be directly opened in a browser.
 
 ## Creators
+
 Hanwen Yan
 Udacity
