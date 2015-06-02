@@ -91,6 +91,12 @@ main_page_head = '''
             var rating = button.data('rating')
             var duration = button.data('duration')
             var genre = button.data('genre')
+            var director = button.data('director')
+            var actors = button.data('actors')
+            var metascore = button.data('metascore')
+            var imdbRating = button.data('imdb-rating')
+            var imdbID = button.data('imdb-id')
+
 
             var modal = $(this)
             modal.find('.modal-title').text(title + ' ('+year+')' ) // Add the title and year of the movie
@@ -99,7 +105,12 @@ main_page_head = '''
               '<p><b>Plot:</b> ' +storyline+ '</p>' + 
               '<p><b>Rating:</b> ' +rating+ '</p>' + 
               '<p><b>Duration:</b> ' +duration+ '</p>' + 
-              '<p><b>Genres:</b> ' +genre+ '</p>' )
+              '<p><b>Genres:</b> ' +genre+ '</p>' +
+              '<p><b>Director(s):</b> ' +director+ '</p>' + 
+              '<p><b>Actor(s):</b> ' +actors+ '</p>' + 
+              '<p><b>Metascore:</b> <a href="http://www.metacritic.com/about-metascores" target="_blank">' +metascore+ '</a></p>' + 
+              '<p><b>IMDb Rating:</b> <a href="http://www.imdb.com/title/' +imdbID+ '/" target="_blank">' +imdbRating+ '</a></p>'
+              )
           });
         });
     </script>
@@ -170,7 +181,8 @@ movie_tile_content = '''
     <img class="view-trailer" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer" src="{poster_image_url}" width="220" height="342">
     <br>
     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#movieInfo" data-title="{movie_title}" data-year="{movie_year}"
-    data-rating="{movie_rating}" data-duration="{movie_duration}" data-genre="{movie_genre}" data-storyline="{movie_storyline}">
+    data-rating="{movie_rating}" data-duration="{movie_duration}" data-genre="{movie_genre}" data-director="{movie_director}" data-actors="{movie_actors}"
+    data-metascore="{movie_metascore}" data-imdb-rating="{movie_imdbRating}" data-imdb-id="{movie_imdbID}" data-storyline="{movie_storyline}">
       {movie_title}
     </button>
 </div>
@@ -193,6 +205,11 @@ def create_movie_tiles_content(movies):
             movie_rating = movie.rating,
             movie_duration = movie.duration,
             movie_genre = movie.genre,
+            movie_director = movie.director,
+            movie_actors = movie.actors,
+            movie_metascore = movie.metascore,
+            movie_imdbRating = movie.imdbRating,
+            movie_imdbID = movie.imdbID,
             poster_image_url = movie.poster_image_url,
             movie_storyline = movie.storyline,
             trailer_youtube_id = trailer_youtube_id

@@ -85,6 +85,12 @@
             var rating = button.data('rating')
             var duration = button.data('duration')
             var genre = button.data('genre')
+            var director = button.data('director')
+            var actors = button.data('actors')
+            var metascore = button.data('metascore')
+            var imdbRating = button.data('imdb-rating')
+            var imdbID = button.data('imdb-id')
+
 
             var modal = $(this)
             modal.find('.modal-title').text(title + ' ('+year+')' ) // Add the title and year of the movie
@@ -93,7 +99,12 @@
               '<p><b>Plot:</b> ' +storyline+ '</p>' + 
               '<p><b>Rating:</b> ' +rating+ '</p>' + 
               '<p><b>Duration:</b> ' +duration+ '</p>' + 
-              '<p><b>Genres:</b> ' +genre+ '</p>' )
+              '<p><b>Genres:</b> ' +genre+ '</p>' +
+              '<p><b>Director(s):</b> ' +director+ '</p>' + 
+              '<p><b>Actor(s):</b> ' +actors+ '</p>' + 
+              '<p><b>Metascore:</b> <a href="http://www.metacritic.com/about-metascores" target="_blank">' +metascore+ '</a></p>' + 
+              '<p><b>IMDb Rating:</b> <a href="http://www.imdb.com/title/' +imdbID+ '/" target="_blank">' +imdbRating+ '</a></p>'
+              )
           });
         });
     </script>
@@ -145,7 +156,8 @@
     <img class="view-trailer" data-trailer-youtube-id="MdZaOB03b1U" data-toggle="modal" data-target="#trailer" src="http://ia.media-imdb.com/images/M/MV5BMjM0MDQ5NTc3N15BMl5BanBnXkFtZTgwMzQxNzQxMTE@._V1_SX300.jpg" width="220" height="342">
     <br>
     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#movieInfo" data-title="Desperado" data-year="1995"
-    data-rating="R" data-duration="104 min" data-genre="Action, Crime, Thriller" data-storyline="A gunslinger is embroiled in a war with a local drug runner.">
+    data-rating="R" data-duration="104 min" data-genre="Action, Crime, Thriller" data-director="Robert Rodriguez" data-actors="Antonio Banderas, Salma Hayek, Joaquim de Almeida, Cheech Marin"
+    data-metascore="55" data-imdb-rating="7.2" data-imdb-id="tt0112851" data-storyline="A gunslinger is embroiled in a war with a local drug runner.">
       Desperado
     </button>
 </div>
@@ -155,7 +167,8 @@
     <img class="view-trailer" data-trailer-youtube-id="niD-jahFURU" data-toggle="modal" data-target="#trailer" src="http://ia.media-imdb.com/images/M/MV5BMTMzODU0NTkxMF5BMl5BanBnXkFtZTcwMjQ4MzMzMw@@._V1_SX300.jpg" width="220" height="342">
     <br>
     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#movieInfo" data-title="Ratatouille" data-year="2007"
-    data-rating="G" data-duration="111 min" data-genre="Animation, Comedy, Family" data-storyline="A rat who can cook makes an unusual alliance with a young kitchen worker at a famous restaurant.">
+    data-rating="G" data-duration="111 min" data-genre="Animation, Comedy, Family" data-director="Brad Bird, Jan Pinkava" data-actors="Patton Oswalt, Ian Holm, Lou Romano, Brian Dennehy"
+    data-metascore="96" data-imdb-rating="8.0" data-imdb-id="tt0382932" data-storyline="A rat who can cook makes an unusual alliance with a young kitchen worker at a famous restaurant.">
       Ratatouille
     </button>
 </div>
@@ -165,7 +178,8 @@
     <img class="view-trailer" data-trailer-youtube-id="khmdFP-PiAg" data-toggle="modal" data-target="#trailer" src="http://ia.media-imdb.com/images/M/MV5BMTkzNTc0NDc4OF5BMl5BanBnXkFtZTcwNTY1ODg3OA@@._V1_SX300.jpg" width="220" height="342">
     <br>
     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#movieInfo" data-title="Unforgiven" data-year="1992"
-    data-rating="R" data-duration="131 min" data-genre="Western" data-storyline="Retired Old West gunslinger William Munny reluctantly takes on one last job, with the help of his old partner and a young man.">
+    data-rating="R" data-duration="131 min" data-genre="Western" data-director="Clint Eastwood" data-actors="Clint Eastwood, Gene Hackman, Morgan Freeman, Richard Harris"
+    data-metascore="82" data-imdb-rating="8.3" data-imdb-id="tt0105695" data-storyline="Retired Old West gunslinger William Munny reluctantly takes on one last job, with the help of his old partner and a young man.">
       Unforgiven
     </button>
 </div>
@@ -175,7 +189,8 @@
     <img class="view-trailer" data-trailer-youtube-id="ip_0CFKTO9E" data-toggle="modal" data-target="#trailer" src="http://ia.media-imdb.com/images/M/MV5BMTAxNDYxMjg0MjNeQTJeQWpwZ15BbWU3MDcyNTk2OTM@._V1_SX300.jpg" width="220" height="342">
     <br>
     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#movieInfo" data-title="Tangled" data-year="2010"
-    data-rating="PG" data-duration="100 min" data-genre="Animation, Comedy, Family" data-storyline="The magically long-haired Rapunzel has spent her entire life in a tower, but now that a runaway thief has stumbled upon her, she is about to discover the world for the first time, and who she really is.">
+    data-rating="PG" data-duration="100 min" data-genre="Animation, Comedy, Family" data-director="Nathan Greno, Byron Howard" data-actors="Mandy Moore, Zachary Levi, Donna Murphy, Ron Perlman"
+    data-metascore="71" data-imdb-rating="7.8" data-imdb-id="tt0398286" data-storyline="The magically long-haired Rapunzel has spent her entire life in a tower, but now that a runaway thief has stumbled upon her, she is about to discover the world for the first time, and who she really is.">
       Tangled
     </button>
 </div>
@@ -185,7 +200,8 @@
     <img class="view-trailer" data-trailer-youtube-id="hfpbZmQHkWw" data-toggle="modal" data-target="#trailer" src="http://ia.media-imdb.com/images/M/MV5BMTkxNDYxOTA4M15BMl5BanBnXkFtZTgwNTk0NzQxMTE@._V1_SX300.jpg" width="220" height="342">
     <br>
     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#movieInfo" data-title="The Matrix" data-year="1999"
-    data-rating="R" data-duration="136 min" data-genre="Action, Sci-Fi" data-storyline="A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.">
+    data-rating="R" data-duration="136 min" data-genre="Action, Sci-Fi" data-director="Andy Wachowski, Lana Wachowski" data-actors="Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving"
+    data-metascore="73" data-imdb-rating="8.7" data-imdb-id="tt0133093" data-storyline="A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.">
       The Matrix
     </button>
 </div>
@@ -195,7 +211,8 @@
     <img class="view-trailer" data-trailer-youtube-id="87E6N7ToCxs" data-toggle="modal" data-target="#trailer" src="http://ia.media-imdb.com/images/M/MV5BNzMxNTExOTkyMF5BMl5BanBnXkFtZTcwMzEyNDc0OA@@._V1_SX300.jpg" width="220" height="342">
     <br>
     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#movieInfo" data-title="Wreck-It Ralph" data-year="2012"
-    data-rating="PG" data-duration="101 min" data-genre="Animation, Adventure, Comedy" data-storyline="A video game villain wants to be a hero and sets out to fulfill his dream, but his quest brings havoc to the whole arcade where he lives.">
+    data-rating="PG" data-duration="101 min" data-genre="Animation, Adventure, Comedy" data-director="Rich Moore" data-actors="John C. Reilly, Sarah Silverman, Jack McBrayer, Jane Lynch"
+    data-metascore="72" data-imdb-rating="7.8" data-imdb-id="tt1772341" data-storyline="A video game villain wants to be a hero and sets out to fulfill his dream, but his quest brings havoc to the whole arcade where he lives.">
       Wreck-It Ralph
     </button>
 </div>

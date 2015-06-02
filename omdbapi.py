@@ -15,17 +15,22 @@ class Movie(Video):
 	It passes a movie title to www.omdbapi.com and then parses the returned JSON for the movie's information:
 	Currently the movie attributes stored are:
 
-	* year - the release year of the movie
-	* rating - the rating of the movie e.g. G, PG, PG-13, R
-	* duration - the length of the movie
-	* genre - the movie's genre
+	* year - the release year
+	* rating - the MPAA rating e.g. G, PG, PG-13, R
+	* duration - the length
+	* genre - the genre
+	* director - the list of directors
+	* actors - the list of actors
 	* storyline - the plot of the movie
+	* metascore - the rating from Metacritic (out of 100)
+	* imdbRating - the movie rating from IMDB (out of 10)
 	* poster_image_url - the link to the movie's poster
 	* trailer_youtube_url - the link to the movie's YouTube Trailer
 
-	Example:
-	ratatouille = Movie("Ratatouille","www.youtube.com/watch?v=c3sBBRxDAqk")
-	return ratatouille.storyline 
+	Example Usage:
+	>> import omdbapi
+	>> ratatouille = Movie("Ratatouille","www.youtube.com/watch?v=c3sBBRxDAqk")
+	>> print ratatouille.storyline 
 	>> A rat who can cook makes an unusual alliance with a young kitchen worker at a famous restaurant.
 
 	"""
@@ -46,9 +51,14 @@ class Movie(Video):
 		parsed_json = json.loads(output)
 		
 		self.year = parsed_json["Year"] # Get the movie release year
-		self.rating = parsed_json["Rated"] # Get the rating
+		self.rating = parsed_json["Rated"] # Get the MPAA rating
 		self.duration = parsed_json["Runtime"] # Get the length
 		self.genre = parsed_json["Genre"] # Get the list of genres
+		self.director = parsed_json["Director"] # Get the directors
+		self.actors = parsed_json["Actors"] # Get the actors
+		self.metascore = parsed_json["Metascore"] # Get the score from metacritic
+		self.imdbRating = parsed_json["imdbRating"] # Get the score from IMDb
+		self.imdbID = parsed_json["imdbID"] # Get the IMDb ID which can be used to find the movie
 		self.storyline = parsed_json["Plot"] # Get the plot
 		self.poster_image_url = parsed_json["Poster"] # Get the poster url
 		self.trailer_youtube_url = trailer_link # TODO: use YouTube API for searching the YT id of the movie trailer

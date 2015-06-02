@@ -13,5 +13,5 @@ ralph = omdbapi.Movie("Wreck-It Ralph","www.youtube.com/watch?v=87E6N7ToCxs")
 # Create a list of all of the movie instances for the fresh_tomatoes.open_movies_page function
 movies = [desperado, ratatouille, unforgiven, tangled, matrix, ralph]
 
-# Run the function which creates the HTML/CSS/JS with the movie information
+# Run the function which creates the HTML/CSS/JS with the movie information which is in the module fresh_tomatoes.py
 fresh_tomatoes.open_movies_page(movies)
