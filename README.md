@@ -33,8 +33,8 @@ This is the project for the Programming Foundations with Python which introduces
 - `omdbapi.py`
 - `entertainment_center_omdbapi.py`
 - `fresh_tomatoes.py`
-- 'README.md'
-- 'LICENSE'
+- `README.md`
+- `LICENSE`
 
 2. Run: `python entertainment_center_omdbapi.py` which will create (or overwrite) fresh_tomatoes.html and open it in a browser.
 
