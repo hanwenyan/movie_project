@@ -43,4 +43,4 @@ This is the project for the Programming Foundations with Python which introduces
 
 ## Creators
   * Hanwen Yan
-  * Udacity
+  * [Udacity](www.udacity.com)
