@@ -26,20 +26,21 @@ This is the project for the Programming Foundations with Python which introduces
 
 - Python 2.7
 
-
 ### To run:
 
 1. Download and unzip the project folder from [here](https://github.com/hanwenyan/movie_project/archive/master.zip). It should contain:
 
-* `omdbapi.py`
-* `entertainment_center_omdbapi.py`
-* `fresh_tomatoes.py`
-* some other files like this README
+  * `omdbapi.py`
+  * `entertainment_center_omdbapi.py`
+  * `fresh_tomatoes.py`
+  * `fresh_tomatoes.html`
+  * `README.md`
+  * `LICENSE`
 
 2. Run: `python entertainment_center_omdbapi.py` which will create (or overwrite) fresh_tomatoes.html and open it in a browser.
 
 3. Additionally, a copy of `fresh_tomatoes.html` is included and can be directly opened in a browser.
 
 ## Creators
-Hanwen Yan
-Udacity
+  * Hanwen Yan
+  * Udacity
