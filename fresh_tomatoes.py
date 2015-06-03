@@ -154,7 +154,7 @@ main_page_content = '''
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Movie Trailers</a>
+            <a class="navbar-brand" href="#">Ridiculously Sweet Movie Trailers</a>
           </div>
         </div>
       </div>
@@ -165,8 +165,7 @@ main_page_content = '''
   
   <footer class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
-      <p class="navbar-text pull-right">Movie information from:
-        <a href="http://www.omdbapi.com/" target="_blank">The Open Movie Database</a>.
+      <p class="navbar-text pull-right">Movie information from <a href="http://www.omdbapi.com/" target="_blank">The Open Movie Database</a>.
       </p>
     </div>
   </footer>
