@@ -28,7 +28,7 @@ This is the project for the Programming Foundations with Python which introduces
 
 ### To run:
 
-1. Download and unzip the project folder from [here](https://github.com/hanwenyan/movie_project/archive/master.zip). It should contain:
+1. Download and unzip the project folder from [here](https://github.com/hanwenyan/movie_project/archive/master.zip) and unzip the file into a directory. The directory should contain:
 
   * `omdbapi.py`
   * `entertainment_center_omdbapi.py`
